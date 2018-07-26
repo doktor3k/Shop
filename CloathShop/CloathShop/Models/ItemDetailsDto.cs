@@ -14,7 +14,8 @@ namespace ClothShop.Models
         public int NumberOfItem { get; set; }
         public double PricePerOne { get; set; }
         public int CategoryId { get; set; }
-        
+        [Display(Name = "Item image")]
+        public string ImagePath { get; set; }
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 

@@ -228,6 +228,7 @@
     <Compile Include="Infrastructure\ClothesShopFileManager.cs" />
     <Compile Include="Infrastructure\Interfaces\IClothesShopFileManager.cs" />
     <Compile Include="Infrastructure\ShopDBContext.cs" />
+    <Compile Include="Infrastructure\UrlHelper.cs" />
     <Compile Include="Migrations\201807191609236_InitDatabase.cs" />
     <Compile Include="Migrations\201807191609236_InitDatabase.Designer.cs">
       <DependentUpon>201807191609236_InitDatabase.cs</DependentUpon>

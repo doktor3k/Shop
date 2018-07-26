@@ -47,13 +47,16 @@ namespace ClothShop.Services.Concrete
         public ItemDetailsDto ItemDetails(int itemId)
         {
             var item = _database.Items.Find(itemId);
+            var imagePath = _database.Images.Where(a => a.ItemId == item.Id).Select(a => a.ImagePath).First();
             ItemDetailsDto itemDetails = new ItemDetailsDto
             {
                 Name = item.Name,
                 CategoryId = item.CategoryId,
                 Description = item.Description,
                 NumberOfItem = item.NumberOfItem,
-                PricePerOne = item.PricePerOne
+                PricePerOne = item.PricePerOne,
+                ImagePath = imagePath
+                
             };
 
 
