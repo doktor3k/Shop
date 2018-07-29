@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace ClothShop.Models
 {
@@ -20,11 +21,11 @@ namespace ClothShop.Models
 
         [Required]
         [Display(Name = "Price per one")]
-
         public int PricePerOne { get; set; }
 
         [Required]
         public int CategoryId { get; set; }
+        public IEnumerable<SelectListItem> Categories { get; set; }
 
         [Required]
         [DataType(DataType.MultilineText)]

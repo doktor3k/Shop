@@ -18,7 +18,8 @@ namespace ClothShop.Models
         public string ImagePath { get; set; }
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
-
+        public int ItemId { get; set; }
+        public List<string> Categories { get; set; }
 
     }
 }

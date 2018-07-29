@@ -63,8 +63,33 @@ namespace ClothShop.Controllers
             var model = _itemService.ItemDetails(itemId);
             return View(model);
         }
-       
 
+        public ActionResult EditItem(int itemId)
+        {
+            var model = _itemService.ItemDetails(itemId);
+            return View(model);
+
+        }
+
+        [HttpPost]
+        public ActionResult EditItem(ItemDetailsDto model)
+        {
+            if (_itemService.EditItem(model))
+            {
+                
+            return RedirectToAction("ItemDetails", "Item", _itemService.ItemDetails(model.ItemId)); 
+            }
+            else
+            {
+                return RedirectToAction("ErrorInItemEditing");
+            }
+        }
+
+        public ActionResult ErrorInItemEditing()
+        {
+            return View();
+
+        }
 
 
         //public ActionResult ItemDetails(int itemId)

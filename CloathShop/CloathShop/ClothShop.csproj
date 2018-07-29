@@ -263,7 +263,9 @@
     <Compile Include="PresentationLogic\Container\IocContainer.cs" />
     <Compile Include="PresentationLogic\Container\WindsorControllerFactory.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Abstract\ICategoryService.cs" />
     <Compile Include="Services\Abstract\IItemService.cs" />
+    <Compile Include="Services\Concrete\CategoryService.cs" />
     <Compile Include="Services\Concrete\ItemService.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -330,6 +332,8 @@
     <Content Include="Views\Item\ItemManage.cshtml" />
     <Content Include="Views\Item\AddItem.cshtml" />
     <Content Include="Views\Item\ItemDetails.cshtml" />
+    <Content Include="Views\Item\ErrorInItemEditing.cshtml" />
+    <Content Include="Views\Item\EditItem.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

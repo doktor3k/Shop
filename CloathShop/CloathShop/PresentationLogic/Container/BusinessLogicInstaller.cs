@@ -19,7 +19,9 @@ namespace ClothShop.PresentationLogic.Container
         {
             container.Register(Component.For<IClothesShopFileManager>().ImplementedBy<ClothesShopFileManager>());
             container.Register(Component.For<IItemService>().ImplementedBy<ItemService>());
+            container.Register(Component.For<ICategoryService>().ImplementedBy<CategoryService>());
             container.Register(Component.For<ShopDbContext>().Instance(new ShopDbContext()));
+            
 
         }
     }

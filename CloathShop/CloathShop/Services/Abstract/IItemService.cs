@@ -8,5 +8,6 @@ namespace ClothShop.Services.Abstract
         int AddItem(AddItemDto model);
         Item GetItemById(int itemId);
         ItemDetailsDto ItemDetails(int itemId);
+        bool EditItem(ItemDetailsDto model);
     }
 }
