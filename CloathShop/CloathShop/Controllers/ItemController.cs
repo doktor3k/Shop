@@ -88,6 +88,10 @@ namespace ClothShop.Controllers
                 return RedirectToAction("ErrorInItemEditing");
             }
         }
+        public ActionResult Delete()
+        {
+            return View();
+        }
 
         public ActionResult ErrorInItemEditing()
         {
