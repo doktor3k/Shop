@@ -13,6 +13,13 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
+            @Html.DisplayNameFor(model=>model.ImagePath)
+        </dt>
+        <dt>
+            @* <img class="img-fixed" src="@Url" data-toggle="tooltip" data-placement="bottom" title="Źródło: @Model.ImagePath" />*@
+            <img class="img-responsive" src="@Url.ItemPicture(Model.ImagePath)" />
+        </dt>
+        <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>
 
@@ -50,22 +57,16 @@
         <dd>
             @Html.DisplayFor(model => model.Description)
         </dd>
-        <dt>
-            @Html.DisplayNameFor(model => model.ImagePath)
-        </dt>
 
 
-        <dt>
-            @* <img class="img-fixed" src="@Url" data-toggle="tooltip" data-placement="bottom" title="Źródło: @Model.ImagePath" />*@
-            <img class="img-responsive" src="@Url.ItemPicture(Model.ImagePath)" />
-        </dt>
+
 
 
 
 
     </dl>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { /* id = Model.PrimaryKey */ }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+<div class="btn-group " style="min-width:300px">
+
+    <p><a style="min-width:300px" class="btn btn-primary btn-lg" @Html.ActionLink("Edit This Item", "EditItem", "Item",new { itemId=2},null)<span></span></p>
+</div>

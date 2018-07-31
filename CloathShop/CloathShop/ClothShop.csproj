@@ -225,8 +225,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Infrastructure\ClothesShopFileManager.cs" />
-    <Compile Include="Infrastructure\Interfaces\IClothesShopFileManager.cs" />
+    <Compile Include="Infrastructure\ClothShopFileManager.cs" />
+    <Compile Include="Infrastructure\Interfaces\IClothShopFileManager.cs" />
     <Compile Include="Infrastructure\ShopDBContext.cs" />
     <Compile Include="Infrastructure\UrlHelper.cs" />
     <Compile Include="Migrations\201807191609236_InitDatabase.cs" />
@@ -255,8 +255,10 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\AddItemDto.cs" />
-    <Compile Include="Models\ItemDetailsDto.cs" />
+    <Compile Include="Models\Item\AddItemDto.cs" />
+    <Compile Include="Models\Category\CategoryListDto.cs" />
+    <Compile Include="Models\Item\ItemDetailsDto.cs" />
+    <Compile Include="Models\Item\ShortItemDetails.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="PresentationLogic\Container\BusinessLogicInstaller.cs" />
     <Compile Include="PresentationLogic\Container\ControllersInstaller.cs" />
@@ -334,6 +336,7 @@
     <Content Include="Views\Item\ItemDetails.cshtml" />
     <Content Include="Views\Item\ErrorInItemEditing.cshtml" />
     <Content Include="Views\Item\EditItem.cshtml" />
+    <Content Include="Views\Shared\_ShortItemDetailsPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

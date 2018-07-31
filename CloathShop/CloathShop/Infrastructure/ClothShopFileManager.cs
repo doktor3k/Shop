@@ -7,7 +7,7 @@ using System.Web;
 
 namespace ClothShop.Infrastructure
 {
-    public class ClothesShopFileManager: IClothesShopFileManager
+    public class ClothShopFileManager: IClothShopFileManager
     {
         public void DeleteFile(string fileName, string folder)
         {

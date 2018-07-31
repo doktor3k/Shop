@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ClothShop.Models.Category;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,6 +10,9 @@ namespace ClothShop.Models
 {
     public class AddItemDto
     {
+        
+        
+
         [Required]
         [Display(Name = "Item Name")]
         [StringLength(50,ErrorMessage = "Name can not be longer than 50 characters", MinimumLength = 6)]
@@ -21,17 +25,17 @@ namespace ClothShop.Models
 
         [Required]
         [Display(Name = "Price per one")]
-        public int PricePerOne { get; set; }
+        public double PricePerOne { get; set; }
 
-        [Required]
+        [Required]      
         public int CategoryId { get; set; }
-        public IEnumerable<SelectListItem> Categories { get; set; }
+        public List<CategoryListDto> Categories { get; set; }
 
         [Required]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
-       
+        public int? ItemId { get; set; }
         public HttpPostedFileBase File { get; set; }
 
 

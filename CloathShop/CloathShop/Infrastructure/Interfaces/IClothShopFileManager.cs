@@ -2,7 +2,7 @@
 
 namespace ClothShop.Infrastructure.Interfaces
 {
-    public interface IClothesShopFileManager
+    public interface IClothShopFileManager
     {
          string SaveFile(HttpPostedFileBase file);
          void DeleteFile(string fileName, string folder);

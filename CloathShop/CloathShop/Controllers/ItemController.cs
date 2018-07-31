@@ -20,12 +20,13 @@ namespace ClothShop.Controllers
         // GET: Item
         private readonly ShopDbContext _db;
         private readonly IItemService _itemService;
+        private readonly ICategoryService _categoryService;
 
-
-        public ItemController( ShopDbContext dbContext,IItemService itemService)
+        public ItemController( ShopDbContext dbContext,IItemService itemService,ICategoryService categoryService)
         {
             _db = dbContext;
             _itemService = itemService;
+            _categoryService = categoryService;
         }
 
         public ActionResult ItemManage()
@@ -41,7 +42,8 @@ namespace ClothShop.Controllers
         }
         public ActionResult Additem()
         {
-            return View();
+            var model = new AddItemDto { Categories = _categoryService.GetCategoryList() };
+            return View(model);
         }
 
 
@@ -52,10 +54,10 @@ namespace ClothShop.Controllers
             {
 
                 var itemId=_itemService.AddItem(model);
-              
+                
                 return RedirectToAction("ItemDetails","Item",_itemService.ItemDetails(itemId));
-            } 
-
+            }
+            model.Categories = _categoryService.GetCategoryList();
             return View(model);
         }
         public ActionResult ItemDetails(int itemId)
@@ -66,7 +68,9 @@ namespace ClothShop.Controllers
 
         public ActionResult EditItem(int itemId)
         {
-            var model = _itemService.ItemDetails(itemId);
+            var model = _itemService.ItemDetailsToAdd(itemId);
+
+            model.Categories = _categoryService.GetCategoryList();
             return View(model);
 
         }

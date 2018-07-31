@@ -17,7 +17,7 @@ namespace ClothShop.PresentationLogic.Container
     {
         public void Install(IWindsorContainer container, IConfigurationStore store)
         {
-            container.Register(Component.For<IClothesShopFileManager>().ImplementedBy<ClothesShopFileManager>());
+            container.Register(Component.For<IClothShopFileManager>().ImplementedBy<ClothShopFileManager>());
             container.Register(Component.For<IItemService>().ImplementedBy<ItemService>());
             container.Register(Component.For<ICategoryService>().ImplementedBy<CategoryService>());
             container.Register(Component.For<ShopDbContext>().Instance(new ShopDbContext()));

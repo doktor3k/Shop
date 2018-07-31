@@ -14,10 +14,10 @@ namespace ClothShop.Services.Concrete
     public class ItemService:IItemService
     {
         private readonly ShopDbContext _database;
-        private readonly IClothesShopFileManager _fileManager;
+        private readonly IClothShopFileManager _fileManager;
         private readonly ICategoryService _categoryService;
 
-        public ItemService(ShopDbContext database,IClothesShopFileManager filemanager, ICategoryService categoryservice)
+        public ItemService(ShopDbContext database,IClothShopFileManager filemanager, ICategoryService categoryservice)
         {
             _database = database;
             _fileManager = filemanager;
@@ -31,7 +31,7 @@ namespace ClothShop.Services.Concrete
                 {
                     Name = model.Name,
                     NumberOfItem = model.NumberOfItem,
-                    CategoryId = model.CategoryId,
+                    CategoryId=model.CategoryId,
                     Description = model.Description,
                     PricePerOne = model.PricePerOne
                 };
@@ -67,7 +67,29 @@ namespace ClothShop.Services.Concrete
 
             return itemDetails;
         }
+        public AddItemDto ItemDetailsToAdd(int itemId)
+        {
+            var itemDetails = ItemDetails(itemId);
+            AddItemDto itemToEdit = new AddItemDto
+            {
+                Name = itemDetails.Name,
+                Description = itemDetails.Description,
+                PricePerOne = itemDetails.PricePerOne,
+                NumberOfItem = itemDetails.NumberOfItem,
+                CategoryId = itemDetails.CategoryId,
+                ItemId = itemDetails.ItemId
 
+
+            };
+            return itemToEdit;
+        }
+        public AddItemDto GetDetailsToAdd()
+        {
+            return new AddItemDto
+            {
+                Categories = _categoryService.GetCategoryList()
+            };
+        }
         public bool EditItem(ItemDetailsDto model)
         {
             try
