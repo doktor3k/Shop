@@ -60,6 +60,7 @@ namespace ClothShop.Controllers
             model.Categories = _categoryService.GetCategoryList();
             return View(model);
         }
+        [AllowAnonymous]
         public ActionResult ItemDetails(int itemId)
         {
             var model = _itemService.ItemDetails(itemId);
@@ -88,7 +89,8 @@ namespace ClothShop.Controllers
                 return RedirectToAction("ErrorInItemEditing");
             }
         }
-        public ActionResult Delete()
+
+        public ActionResult DeleteItem()
         {
             return View();
         }

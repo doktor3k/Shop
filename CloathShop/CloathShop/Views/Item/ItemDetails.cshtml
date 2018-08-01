@@ -66,7 +66,17 @@
 
     </dl>
 </div>
-<div class="btn-group " style="min-width:300px">
+<div class="btn-group " style="min-width:200px">
+    @if ((User.Identity.IsAuthenticated) && (User.IsInRole("Admin")))
+    {
+        <p><a style="min-width:200px" class="btn btn-primary btn-lg" @Html.ActionLink("Edit This Item", "EditItem", "Item", new { Model.ItemId }, null)<span></span></p>
+        <p><a style="min-width:200px" class="btn btn-primary btn-lg" @Html.ActionLink("Delete This Item", "DeleteItemItem", "Item", new { Model.ItemId }, null)<span></span></p>
+    }
+    {
+    @if (!User.IsInRole("Admin"))
+    {
+        <p><a style="min-width:200px" class="btn btn-primary btn-lg" @Html.ActionLink("Add to card", "EditItem", "Item", new { Model.ItemId }, null)<span></span></p>
 
-    <p><a style="min-width:300px" class="btn btn-primary btn-lg" @Html.ActionLink("Edit This Item", "EditItem", "Item",new { itemId=2},null)<span></span></p>
+    }
+
 </div>

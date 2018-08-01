@@ -13,16 +13,22 @@ namespace ClothShop.Controllers
             return View();
         }
 
-        public ActionResult About()
+        public ActionResult Help()
         {
-            ViewBag.Message = "Your application description page.";
+            ViewBag.Message = "Help";
 
             return View();
         }
 
         public ActionResult Contact()
         {
-            ViewBag.Message = "Your contact page.";
+            ViewBag.Message = "Contact";
+
+            return View();
+        }
+        public ActionResult Regulations()
+        {
+            ViewBag.Message = "Regulations";
 
             return View();
         }
