@@ -258,7 +258,8 @@
     <Compile Include="Models\Item\AddItemDto.cs" />
     <Compile Include="Models\Category\CategoryListDto.cs" />
     <Compile Include="Models\Item\ItemDetailsDto.cs" />
-    <Compile Include="Models\Item\ShortItemDetails.cs" />
+    <Compile Include="Models\Item\ItemListDto.cs" />
+    <Compile Include="Models\Item\ShortItemDetailsDto.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="PresentationLogic\Container\BusinessLogicInstaller.cs" />
     <Compile Include="PresentationLogic\Container\ControllersInstaller.cs" />

@@ -113,9 +113,34 @@ namespace ClothShop.Services.Concrete
 
         }
 
+    public bool DeleteItem(int itemId)
+        {
+            try
+            {
+                var item = GetItemById(itemId);
+                _database.Entry(item).State = EntityState.Deleted;
+                return true;
+            }
+            catch (Exception e)
+            {
+                return false;
+            }
+        }
+
         public Item GetItemById(int itemId)
         {
             return _database.Items.Find(itemId);
+        }
+
+        public List<Item> GetItems()
+        {
+            return _database.Items.ToList();
+        }
+
+        public List<Item> GetItemByCategory(int categoryId)
+        {
+           
+            return _database.Items.Where(a => a.CategoryId == categoryId).ToList();
         }
    
     }

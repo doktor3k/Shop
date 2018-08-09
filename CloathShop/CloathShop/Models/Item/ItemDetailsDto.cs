@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -14,6 +15,9 @@ namespace ClothShop.Models
         public int NumberOfItem { get; set; }
         public double PricePerOne { get; set; }
         public int CategoryId { get; set; }
+
+        [DefaultValue(true)]
+        public bool Edit { get; set; }
         [Display(Name = "Item image")]
         public string ImagePath { get; set; }
         [DataType(DataType.MultilineText)]

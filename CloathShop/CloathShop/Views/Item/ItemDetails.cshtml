@@ -6,19 +6,26 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>ItemDetails</h2>
 
-<div>
-    <h4>ItemDetailsDto</h4>
+
+<div class="container">
+
+    <h4>Item Details </h4>
+    @if (Model.Edit==true)
+    {
+        <h4 style="color:crimson">Item eddited succesfully </h4>
+    }
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model=>model.ImagePath)
+            @Html.DisplayNameFor(model => model.ImagePath)
         </dt>
         <dt>
             @* <img class="img-fixed" src="@Url" data-toggle="tooltip" data-placement="bottom" title="Źródło: @Model.ImagePath" />*@
+
             <img class="img-responsive" src="@Url.ItemPicture(Model.ImagePath)" />
         </dt>
+        <div class="w-100"></div>
         <dt>
             @Html.DisplayNameFor(model => model.Name)
         </dt>

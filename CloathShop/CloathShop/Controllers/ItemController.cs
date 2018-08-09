@@ -61,8 +61,12 @@ namespace ClothShop.Controllers
             return View(model);
         }
         [AllowAnonymous]
-        public ActionResult ItemDetails(int itemId)
+        public ActionResult ItemDetails(int itemId,bool? editted)
         {
+            if(editted==true)
+            {
+
+            }
             var model = _itemService.ItemDetails(itemId);
             return View(model);
         }
@@ -81,7 +85,7 @@ namespace ClothShop.Controllers
         {
             if (_itemService.EditItem(model))
             {
-                
+                model.Edit = true;
             return RedirectToAction("ItemDetails", "Item", _itemService.ItemDetails(model.ItemId)); 
             }
             else
